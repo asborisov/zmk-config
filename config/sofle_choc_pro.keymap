@@ -27,15 +27,6 @@
         };
     };
 
-    macros {
-        pwd: pwd {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp LS(R) &kp U &kp S &kp T &kp Y &kp N3 &kp B &kp R &kp O &kp D &kp I &kp E &kp EXCL &kp E &kp X &kp A &kp M &kp I &kp N &kp E &kp AT &kp H &kp A &kp N &kp D &kp S>;
-            label = "PWD";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
