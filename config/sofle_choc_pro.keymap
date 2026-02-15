@@ -16,6 +16,7 @@
 #define ADJUST 3
 
 #include "sofle.h"
+
 #define KEYS_L LN0 LN1 LN2 LN3 LN4 LN5 LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5// Left-hand keys.
 #define KEYS_R RN0 RN1 RN2 RN3 RN4 RN5 RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // Right-hand keys.
 #define THUMBS LH4 LH4 LH2 LH1 LH0 RH0 RH1 RH2 RH3 RH4                                      // Thumb keys.
@@ -30,9 +31,11 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
         };
+
         hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -41,6 +44,7 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
@@ -77,8 +81,6 @@
 &kp LSHFT  &kp Z           &kp X        &kp C             &kp V           &kp B   &kp C_MUTE  &kp C_PLAY  &kp N   &kp M            &kp COMMA          &kp DOT      &kp FSLH            &kp RSHFT
                            &kp LGUI     &kp LALT          &kp LCTRL       &mo 1   &kp RET     &kp SPACE   &mo 2   &kp BACKSPACE    &kp RALT           &kp RGUI
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
         };
 
         lower_layer {
@@ -98,8 +100,6 @@
 &trans     &kp EQUAL  &kp MINUS  &kp PLUS  &kp LBRC  &kp RBRC   &kp LC(LG(Q))  &trans           &kp LBKT  &kp RBKT  &kp SEMI   &kp COLON  &kp BSLH  &trans
                       &trans     &trans    &trans    &trans     &trans         &kp RIGHT_SHIFT  &trans    &trans    &trans     &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
         };
 
         raise_layer {
@@ -119,8 +119,6 @@
 &trans      &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &studio_unlock  &trans          &trans  &trans  &trans          &trans        &trans     &trans            &trans
                           &trans        &trans        &trans        &trans          &trans          &trans  &trans  &trans          &trans        &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
         };
 
         adjust_layer {
