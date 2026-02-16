@@ -147,6 +147,8 @@
 &trans  &trans        &trans     &trans          &trans        &trans  &trans  &trans  &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOT  &trans
                       &trans     &trans          &trans        &trans  &trans  &trans  &kp NUMBER_0  &trans        &trans        &trans
             >;
+
+            label = "nums";
         };
     };
 };
