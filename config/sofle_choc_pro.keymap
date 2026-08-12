@@ -22,6 +22,8 @@
 #define KEYS_R RN0 RN1 RN2 RN3 RN4 RN5 RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // Right-hand keys.
 #define THUMBS LH4 LH4 LH2 LH1 LH0 RH0 RH1 RH2 RH3 RH4                                      // Thumb keys.
 
+&mmv { acceleration-exponent = <2>; };
+
 / {
     behaviors {
         hml: home_row_mod_left {
@@ -80,7 +82,7 @@
 &kp GRAVE  &kp Q            &kp W         &kp F              &kp P            &kp B         &kp J                                    &kp L             &kp U               &kp Y         &kp SEMICOLON     &kp BSPC
 &kp TAB    &hml LEFT_ALT A  &hml LCTRL R  &hml LEFT_SHIFT S  &hml LEFT_GUI T  &kp G         &kp M                                    &hmr RIGHT_GUI N  &hmr RIGHT_SHIFT E  &hmr RCTRL I  &hmr RIGHT_ALT O  &kp SQT
 &kp LSHFT  &kp Z            &kp X         &kp C              &kp D            &kp V         &kp C_MUTE  &kp C_PLAY  &kp K            &kp H             &kp COMMA           &kp DOT       &kp FSLH          &kp BACKSLASH
-                            &kp LGUI      &mo 6              &lt 5 ESCAPE     &lt 2 ESCAPE  &kp RET     &kp SPACE   &lt 3 BACKSPACE  &kp BACKSPACE     &tog 1              &kp RGUI
+                            &kp LGUI      &mo 6              &lt 5 ESCAPE     &lt 2 ESCAPE  &kp RET     &kp SPACE   &lt 3 BACKSPACE  &kp BACKSPACE     &kp RCMD            &tog 1
             >;
         };
 
@@ -153,11 +155,11 @@
 
         nums {
             bindings = <
-&trans  &trans        &trans     &trans          &trans        &trans                  &trans        &trans        &trans        &trans        &trans   &trans
-&trans  &trans        &trans     &trans          &trans        &trans  &trans                        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans   &trans
-&trans  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &kp LEFT_GUI  &trans  &trans                        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans   &trans
-&trans  &trans        &trans     &trans          &trans        &trans  &trans  &trans  &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOT  &trans
-                      &trans     &trans          &trans        &trans  &trans  &trans  &kp NUMBER_0  &trans        &trans        &trans
+&none  &none         &none      &none           &none         &none                &none         &none         &none         &none         &none    &none
+&none  &none         &none      &none           &none         &none  &none                       &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none    &none
+&none  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &kp LEFT_GUI  &none  &none                       &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none    &none
+&none  &none         &none      &none           &none         &none  &none  &none  &none         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOT  &none
+                     &none      &none           &none         &none  &none  &none  &kp NUMBER_0  &none         &none         &none
             >;
 
             label = "nums";
@@ -165,11 +167,11 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                          &trans        &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &msc SCRL_DOWN                        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &msc SCRL_UP  &trans          &trans          &trans           &trans  &trans
-                &trans  &trans  &trans  &trans  &trans          &trans  &trans        &trans          &trans          &trans
+&none  &none  &none  &none  &none  &none                             &none         &none           &none           &none            &none  &none
+&none  &none  &none  &none  &none  &none  &none                                    &none           &mmv MOVE_UP    &none            &none  &none
+&none  &none  &none  &none  &none  &none  &msc SCRL_DOWN                           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
+&none  &none  &none  &none  &none  &none  &none           &none      &msc SCRL_UP  &msc SCRL_DOWN  &none           &none            &none  &none
+              &none  &none  &none  &none  &none           &mkp LCLK  &mkp RCLK     &none           &none           &none
             >;
 
             label = "mouse";
